@@ -15,7 +15,7 @@ class CSVReader
     end
   end
 
-  create_hash(values)
+  def create_hash(values)
     h = {}
     @headers.each_with_index do |header, i|
       value = values[i].strip.gsub('"', '')
