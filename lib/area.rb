@@ -1,0 +1,1 @@
+# a class who's instance represents one row in the .csv file

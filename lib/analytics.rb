@@ -1,0 +1,1 @@
+# It will have an Array of area instances which you can loop over and extract various bits of information.
