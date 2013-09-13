@@ -7,7 +7,7 @@ class Population
 
   attr_accessor :analytics
 
-  def initialize(analytics)
+  def initialize
     areas = Setup.new().areas
     @analytics = Analytics.new(areas)
   end

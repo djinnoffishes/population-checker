@@ -6,6 +6,7 @@ class Analytics
 
   def initialize(areas)
     @areas = areas
+    set_options
   end
 
   def set_options
