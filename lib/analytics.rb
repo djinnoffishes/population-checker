@@ -16,7 +16,8 @@ class Analytics
     @options << { menu_id: 3, menu_title: 'Larest Population', method: :largest_pop }
     @options << { menu_id: 4, menu_title: 'How many zips in California?', method: :california_zips }
     @options << { menu_id: 5, menu_title: 'Information for a given zip', method: :zip_info }
-    @options << { menu_id: 6, menu_title: 'Exit', method: :exit }
+    @options << { menu_id: 6, menu_title: 'What is the total population of USA?', method: :total }
+    @options << { menu_id: 7, menu_title: 'Exit', method: :exit }
   end
 
   def run(choice)
@@ -51,6 +52,17 @@ class Analytics
   def california_zips
     c = @areas.count { |a| a.state == "CA" }
     p "There are #{c} zip code matches in California"
+  end
+
+  def total
+    state_populations = {}
+    @areas.each do |area|
+      state_populations[area.state] ||= 0
+      state_populations[area.state] += area.estimated_population
+    end
+    state_populations.each do |state, pop|
+      p "There are approximately #{pop} people living in the state of #{state}."
+    end
   end
 
   def zip_info
